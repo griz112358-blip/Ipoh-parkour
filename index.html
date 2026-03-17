@@ -262,7 +262,6 @@ function draw(){
   if(player.hasKey&&level.lockedDoor?.locked){ctx.fillStyle='#fff';ctx.fillText('钥匙已获得!',50,50);}
   
   ctx.restore();
-  if(gameState==='won'){ctx.fillStyle='rgba(0,0,0,0.5)';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.fillStyle='#ffd700';ctx.font='36px Courier New';ctx.textAlign='center';ctx.fillText('已过关! 🎉',canvas.width/2,canvas.height/2);ctx.textAlign='left';}
 }
 
 function update(){
@@ -318,7 +317,7 @@ function update(){
   if(level.lockedDoor&&!level.lockedDoor.locked){const d=level.lockedDoor;if(player.x+player.w>d.x&&player.x<d.x+d.w&&player.y+player.h>d.y){nextLevel();}}
 }
 
-function nextLevel(){gameState='won';msgEl.style.display='block';setTimeout(()=>{if(currentLevel<MAX_LEVEL){currentLevel++;loadLevel(currentLevel);}else{msgEl.textContent='🎉 全部通关! 🎉';document.getElementById('level-select').style.display='flex';}},1500);}
+function nextLevel(){gameState='won';msgEl.textContent='已过关! 🎉';msgEl.style.display='block';setTimeout(()=>{if(currentLevel<MAX_LEVEL){currentLevel++;loadLevel(currentLevel);}else{msgEl.textContent='🎉 全部通关! 🎉';document.getElementById('level-select').style.display='flex';}},1500);}
 
 function gameLoop(){update();draw();requestAnimationFrame(gameLoop);}
 
