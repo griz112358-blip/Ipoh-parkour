@@ -48,17 +48,18 @@
       position: relative;
       width: 100%;
       max-width: 800px;
-      height: 60vh;
-      min-height: 300px;
+      height: 50vh;
       display: flex;
       justify-content: center;
       align-items: center;
+      background: #1a1a2e;
     }
     #game {
       border: 4px solid #eee;
       image-rendering: pixelated;
-      max-width: 100%;
-      max-height: 100%;
+      width: 100%;
+      max-width: 800px;
+      aspect-ratio: 800/500;
     }
     #ui {
       position: absolute;
@@ -158,21 +159,8 @@ const ctx = canvas.getContext('2d');
 const msgEl = document.getElementById('message');
 const levelNumEl = document.getElementById('level-num');
 
-function resizeCanvas() {
-  const container = document.getElementById('game-container');
-  const maxWidth = Math.min(container.clientWidth - 20, 800);
-  const maxHeight = container.clientHeight - 20;
-  const aspect = 800 / 500;
-  let w = maxWidth;
-  let h = w / aspect;
-  if (h > maxHeight) { h = maxHeight; w = h * aspect; }
-  canvas.width = 800;
-  canvas.height = 500;
-  canvas.style.width = w + 'px';
-  canvas.style.height = h + 'px';
-}
-resizeCanvas();
-window.addEventListener('resize', resizeCanvas);
+canvas.width = 800;
+canvas.height = 500;
 
 let currentLevel = 1;
 let gameState = 'playing';
