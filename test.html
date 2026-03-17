@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Canvas</title>
+</head>
+<body>
+  <canvas id="game" width="400" height="300" style="border:2px solid red"></canvas>
+  <script>
+    const canvas = document.getElementById('game');
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'blue';
+    ctx.fillRect(50, 50, 100, 100);
+    ctx.fillStyle = 'white';
+    ctx.font = '20px Arial';
+    ctx.fillText('Hello!', 60, 110);
+    console.log('Canvas test running');
+  </script>
+</body>
+</html>
