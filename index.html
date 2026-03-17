@@ -48,7 +48,8 @@
       position: relative;
       width: 100%;
       max-width: 800px;
-      flex: 1;
+      height: 60vh;
+      min-height: 300px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -86,6 +87,7 @@
       justify-content: space-between;
       align-items: center;
       background: #1a1a2e;
+      min-height: 90px;
     }
     .control-group {
       display: flex;
@@ -136,7 +138,7 @@
     <div id="ui">
       <div id="level-info">第 <span id="level-num">1</span> 关</div>
     </div>
-    <canvas id="game"></canvas>
+    <canvas id="game" width="800" height="500"></canvas>
     <div id="message">过关! 🎉</div>
   </div>
   <div id="controls">
